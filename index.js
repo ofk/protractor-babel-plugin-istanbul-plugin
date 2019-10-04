@@ -16,6 +16,7 @@ exports = module.exports = {
       includeDir: './',
       reportDir: './coverage',
       reporter: ['text'],
+      sourceFinder: null,
       saveCoverageMap: {
         enabled: false,
         path: './.localCoverageMap',
@@ -35,6 +36,7 @@ exports = module.exports = {
   teardown() {
     const context = libReport.createContext({
       dir: this.coverageOpts.reportDir,
+      sourceFinder: this.coverageOpts.sourceFinder,
     });
     const tree = libReport.summarizers.pkg(this.coverageMap);
     this.coverageOpts.reporter.forEach((report) => {
