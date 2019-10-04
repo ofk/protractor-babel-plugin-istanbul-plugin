@@ -14,12 +14,14 @@ exports = module.exports = {
       includeDir: './',
       reportDir: './coverage',
       reporter: ['text'],
+      sourceFinder: null,
     }, config);
     this.coverageMap = libCoverage.createCoverageMap();
   },
   teardown() {
     const context = libReport.createContext({
       dir: this.coverageOpts.reportDir,
+      sourceFinder: this.coverageOpts.sourceFinder,
     });
     const tree = libReport.summarizers.pkg(this.coverageMap);
     this.coverageOpts.reporter.forEach((report) => {
