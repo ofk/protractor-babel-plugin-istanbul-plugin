@@ -6,6 +6,7 @@
   "author": "ofk",
   "license": "MIT",
   "dependencies": {
+    "lodash-core": "^4.17.15",
     "istanbul-lib-coverage": "^2.0.5",
     "istanbul-lib-report": "^2.0.8",
     "istanbul-reports": "^2.2.3"
